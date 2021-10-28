@@ -68,3 +68,39 @@ function addEmployee() {
       }
     });
 }
+
+function addEngineer() {
+  inquirer
+    .prompt([
+      {
+        name: "name",
+        type: "input",
+        message: "Engineer's Name: ",
+      },
+      {
+        name: "id",
+        type: "input",
+        message: "Engineer's ID: ",
+      },
+      {
+        name: "email",
+        type: "input",
+        message: "Engineer's Email: ",
+      },
+      {
+        name: "github",
+        type: "input",
+        message: "Engineer's GitHub Username: ",
+      },
+    ])
+    .then((responseData) => {
+      const newEngineer = new Engineer(
+        responseData.name,
+        responseData.id,
+        responseData.email,
+        responseData.github
+      );
+      team.push(newEngineer);
+      addEmployee();
+    });
+}
