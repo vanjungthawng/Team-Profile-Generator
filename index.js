@@ -140,3 +140,12 @@ function addIntern() {
       addEmployee();
     });
 }
+
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, generateTemplate(data), (err) =>
+    err ? console.error(err) : console.log("HTML file has been created!")
+  );
+}
+
+// Start with addManager function when the page loads
+addManager();
