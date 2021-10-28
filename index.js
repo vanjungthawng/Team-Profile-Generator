@@ -104,3 +104,39 @@ function addEngineer() {
       addEmployee();
     });
 }
+
+function addIntern() {
+  inquirer
+    .prompt([
+      {
+        name: "name",
+        type: "input",
+        message: "Intern's Name: ",
+      },
+      {
+        name: "id",
+        type: "input",
+        message: "Intern's ID: ",
+      },
+      {
+        name: "email",
+        type: "input",
+        message: "Intern's Email: ",
+      },
+      {
+        name: "school",
+        type: "input",
+        message: "Intern's School: ",
+      },
+    ])
+    .then((responseData) => {
+      const newIntern = new Intern(
+        responseData.name,
+        responseData.id,
+        responseData.email,
+        responseData.school
+      );
+      team.push(newIntern);
+      addEmployee();
+    });
+}
