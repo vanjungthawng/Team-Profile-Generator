@@ -45,3 +45,26 @@ function addManager() {
       addEmployee();
     });
 }
+
+function addEmployee() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "addEmployee",
+        message: "Would you like to add Team Members?",
+        choices: ["Engineer", "Intern", "My Team is Full"],
+      },
+    ])
+    .then((responseData) => {
+      if (responseData.addEmployee === "Engineer") {
+        // call addEngineer() function
+        addEngineer();
+      } else if (responseData.addEmployee === "Intern") {
+        // addIntern() function
+        addIntern();
+      } else if (responseData.addEmployee === "My Team is Full") {
+        writeToFile("./dist/index.html", team);
+      }
+    });
+}
