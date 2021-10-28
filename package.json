@@ -1,0 +1,23 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "creating team members cards",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "jest"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Van Cung Thawng",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^8.2.0",
+    "requirer": "0.0.4"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
